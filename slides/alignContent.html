@@ -7,14 +7,70 @@
 
     <ul>
         <li>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          The <code>align-content</code> property is now supported in block and table layouts.
         </li>
         <li>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Previously, this property was only available in flex and grid layouts, often requiring these layouts solely for alignment purposes.
         </li>
         <li>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          This update simplifies the challenge of vertical aligning block elements without the need to create a flex or grid layout.
         </li>
-        <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
     </ul>
+</section>
+<section id="align-content-1">
+  <h3>Vertical Alignment</h3>
+  <div class="slide-container">
+    <pre class="visible-code-block">
+      <code class="code-block hljs" data-trim contenteditable="true">
+        <style>
+          .center {
+            /* flex layout */
+            display: flex;
+            align-content: center;
+            flex-wrap: wrap;
+
+            /* grid layout */
+
+            /* block layout */
+          }
+
+          .element {
+            width: fit-content;
+            height: fit-content;
+            margin-inline: auto;
+          }
+        </style>
+      </code>
+    </pre>
+
+    <script type="text/template" class="hidden-code-block">
+      <style>
+      .center {
+        padding: 1rem;
+        border-radius: 1rem;
+        border-style: solid;
+        border-color: red;
+        border-width: 2px;
+        box-sizing: border-box;
+        min-height: 50vh;
+      }
+
+      .element {
+        padding: 1rem;
+        border-radius: 1rem;
+        border-style: solid;
+        border-color: black;
+        border-width: 4px;
+      }
+      </style>
+      <div class="container">
+        <div class="center">
+          <div class="element">
+            .element
+          </div>
+        </div>
+      </div>
+    </script>
+    <div class="scene" data-edit></div>
+  </div>
 </section>
