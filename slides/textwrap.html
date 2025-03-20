@@ -1,0 +1,225 @@
+<section id="user-interaction-info">
+  <h3>Text Wrap / Balance</h3>
+
+  <div class="baseline-container">
+    <baseline-status featureId="text-wrap"></baseline-status>
+  </div>
+  <div class="baseline-container">
+    <baseline-status featureId="text-wrap-balance"></baseline-status>
+  </div>
+
+  <ul>
+    <li>
+      Distribute text more evenly across lines to prevent orphans and widows.
+    </li>
+    <li>More visually appealing</li>
+  </ul>
+</section>
+
+<section id="text-wrap-balance">
+  <h3>Text Wrap Balance</h3>
+  <div class="slide-container">
+    <pre class="visible-code-block thirty-seventy">
+      <code class="code-block hljs" data-trim contenteditable="true">
+        <style>
+        .text-box {
+          text-wrap: normal;
+
+          font-size-adjust: 0.4;
+
+          h3 {
+            text-align: center;
+          }
+        }
+        </style>
+        <div class="container">
+          <div class="text-box resizable">
+            <h3>
+              Some Longer titles and may break weirdly
+            </h3>
+            <p>
+              This is a sample text to demonstrate different text wrapping behaviors.
+            </p>
+            <p>
+              Some words are longerthanexpectedwithoutspaces, so you can see how wrapping is handled.
+            </p>
+          </div>
+        </div>
+      </code>
+    </pre>
+
+    <script type="text/template" class="hidden-code-block">
+      <style>
+        .text-box {
+          border: 1px solid #ccc;
+          padding: 10px;
+          width: 100%;
+          overflow: hidden;
+          box-sizing: border-box;
+
+          p {
+            margin-bottom: 0.5rem;
+          }
+        }
+
+        .resizable {
+          resize: both;
+          overflow: auto;
+          border: 2px dashed #ccc;
+          padding: 1rem;
+          background: #fff;
+          margin: 0 auto 1rem;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+      </style>
+    </script>
+
+    <div class="scene" data-edit></div>
+  </div>
+</section>
+
+<section id="text-wrap-white-space">
+  <h3>What about &lt;white-space&gt;?</h3>
+
+  <div class="baseline-container">
+    <baseline-status featureId="dialog"></baseline-status>
+  </div>
+  <div class="split-list">
+    <div>
+      <p>text-wrap</p>
+      <ul>
+        <li>Adjusts how text wraps when it reaches the end of a line</li>
+        <li>
+          Does not affect how spaces or newlines are treated—only how words
+          break.
+        </li>
+        <li>Useful for improving text readability and layout optimization.</li>
+      </ul>
+    </div>
+    <div>
+      <p>white-space</p>
+      <ul>
+        <li>Determines whether text wraps at all (normal, nowrap).</li>
+        <li>
+          Affects how spaces and newlines are preserved (pre, pre-wrap,
+          pre-line).
+        </li>
+        <li>
+          Used for handling text formatting (e.g., preserving spacing in code
+          blocks).
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="text-wrap-comparison">
+  <h3>Text Wrap vs White-Space</h3>
+  <div class="slide-container">
+    <pre class="visible-code-block thirty-seventy" style="display: none">
+      <code class="code-block hljs" data-trim contenteditable="true">
+        <style>
+
+        </style>
+      </code>
+    </pre>
+
+    <script type="text/template" class="hidden-code-block">
+      <style>
+        .text-box {
+          border: 1px solid #ccc;
+          padding: 10px;
+          width: 100%;
+          overflow: hidden;
+          box-sizing: border-box;
+
+          p {
+            margin-bottom: 0.5rem;
+          }
+        }
+        .wrap-controls {
+          margin-top: 10px;
+        }
+
+        .resizable {
+          resize: both;
+          overflow: auto;
+          border: 2px dashed #ccc;
+          padding: 1rem;
+          background: #fff;
+          margin: 0 auto 1rem;
+        }
+        button {
+          margin: 5px;
+          padding: 8px 12px;
+          cursor: pointer;
+          border-radius: 5px;
+          border: none;
+        }
+        .wrap-button {
+          background: lightblue;
+        }
+
+        .active {
+          border: 2px solid gray;
+        }
+      </style>
+
+      <div class="container">
+        <div class="text-box resizable" id="textBox">
+          <p>
+            This is a sample text to demonstrate different text wrapping behaviors.
+          </p>
+          <p>
+            Some words are longerthanexpectedwithoutspaces, so you can see how wrapping is handled.
+          </p>
+        </div>
+        <div class="wrap-controls">
+          <button class="wrap-button" onclick="setTextWrap(this, 'wrap')">text-wrap: wrap</button>
+          <button class="wrap-button" onclick="setTextWrap(this, 'balance')">text-wrap: balance</button>
+          <button class="wrap-button" onclick="setTextWrap(this, 'pretty')">text-wrap: pretty</button>
+          <button class="wrap-button" onclick="setTextWrap(this, 'nowrap')">text-wrap: nowrap</button>
+          <button class="wrap-button" onclick="setTextWrap(this, 'stable')">text-wrap: stable</button>
+          <button class="white-space-button" onclick="setWhiteSpace(this, 'normal')">white-space: normal</button>
+          <button class="white-space-button" onclick="setWhiteSpace(this, 'pre-wrap')">white-space: pre-wrap</button>
+          <button class="white-space-button" onclick="setWhiteSpace(this, 'pre-line')">white-space: pre-line</button>
+          <button class="white-space-button" onclick="setWhiteSpace(this, 'nowrap')">white-space: nowrap</button>
+        </div>
+      </div>
+    </script>
+
+    <script>
+      let lastSelectedButton = null;
+
+      function resetStyles() {
+        const textBox = document.getElementById("textBox");
+        textBox.style.textWrap = "";
+        textBox.style.whiteSpace = "";
+      }
+
+      function setTextWrap(button, mode) {
+        resetStyles();
+        document.getElementById("textBox").style.textWrap = mode;
+        updateActiveButton(button);
+      }
+
+      function setWhiteSpace(button, mode) {
+        resetStyles();
+        document.getElementById("textBox").style.whiteSpace = mode;
+        updateActiveButton(button);
+      }
+
+      function updateActiveButton(button) {
+        if (lastSelectedButton) lastSelectedButton.classList.remove("active");
+        button.classList.add("active");
+        lastSelectedButton = button;
+      }
+    </script>
+
+    <div class="scene" data-edit></div>
+  </div>
+</section>
