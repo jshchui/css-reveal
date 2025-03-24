@@ -86,31 +86,26 @@
   <h3>What about &lt;white-space&gt;?</h3>
 
   <div class="baseline-container">
-    <baseline-status featureId="dialog"></baseline-status>
+    <baseline-status featureId="white-space"></baseline-status>
   </div>
   <div class="split-list">
     <div>
-      <p>text-wrap</p>
+      <h3>text-wrap</h3>
       <ul>
-        <li>Adjusts how text wraps when it reaches the end of a line</li>
+        <li>controls how text inside an element is wrapped</li>
         <li>
-          Does not affect how spaces or newlines are treated—only how words
-          break.
+          uses <code>text-wrap-mode</code> (wrap or no wrap) and
+          <code>text-wrap-style</code> (balanced or pretty)
         </li>
-        <li>Useful for improving text readability and layout optimization.</li>
       </ul>
     </div>
     <div>
-      <p>white-space</p>
+      <h3>white-space</h3>
       <ul>
-        <li>Determines whether text wraps at all (normal, nowrap).</li>
+        <li>sets how white space inside an element is handled</li>
         <li>
-          Affects how spaces and newlines are preserved (pre, pre-wrap,
-          pre-line).
-        </li>
-        <li>
-          Used for handling text formatting (e.g., preserving spacing in code
-          blocks).
+          uses <code>text-wrap-mode</code> (wrap or no wrap) and
+          <code>white-space-collapse</code> (collapsed or perserved)
         </li>
       </ul>
     </div>
@@ -171,9 +166,7 @@
 
       <div class="container">
         <div class="text-box resizable" id="textBox">
-          <p>
-            This is a sample text to demonstrate different text wrapping behaviors.
-          </p>
+          <p>This is a sample text to demonstrate different text wrapping behaviors.</p>
           <p>
             Some words are longerthanexpectedwithoutspaces, so you can see how wrapping is handled.
           </p>

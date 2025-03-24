@@ -15,8 +15,8 @@
   </ul>
 </section>
 
-<section id="popover-demo-complete">
-  <h3>&lt;popover&gt; complete</h3>
+<section id="popover-demo">
+  <h3>&lt;popover&gt; demo</h3>
   <div class="slide-container">
     <pre class="visible-code-block">
         <code class="code-block hljs" data-trim contenteditable="true">
@@ -171,7 +171,7 @@
   </div>
   <div class="split-list">
     <div>
-      <p>Popovers</p>
+      <h3>Popovers</h3>
       <ul>
         <li>Dismissed by clicking ouside or "esc" therefore less intrusive</li>
         <li>Great for Toasts, Action Menu*, Tooltips</li>
@@ -179,7 +179,7 @@
       </ul>
     </div>
     <div>
-      <p>Dialogs</p>
+      <h3>Dialogs</h3>
       <ul>
         <li>Must be explicitly closed</li>
         <li>Great for Alerts, Confirmation, required interactions</li>
@@ -454,16 +454,21 @@
   <h3>&lt;position-anchor&gt;</h3>
 
   <div class="baseline-container">
-    <baseline-status featureId="anchor"></baseline-status>
+    <baseline-status featureId="anchor-positioning"></baseline-status>
   </div>
 
   <ul>
     <li>
-      Small overlay window that appears on demand—providing contextual
-      information or interactive options without navigating away from the
-      current page.
+      Enables precise positioning of floating UI elements relative to a
+      reference element (the anchor).
     </li>
-    <li>Great for Toasts, Action Menu*</li>
+    <li>
+      Useful for dropdowns, tooltips, popovers, and other context-sensitive UI.
+    </li>
+    <li>
+      Automatically adapts to layout changes and scrolling, keeping the
+      positioned element aligned with its anchor.
+    </li>
   </ul>
 </section>
 

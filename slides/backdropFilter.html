@@ -12,10 +12,13 @@
   </ul>
 
   <div>
-    <p>filter</p>
+    <h3>filter</h3>
+
+    <div class="baseline-container">
+      <baseline-status featureId="filter"></baseline-status>
+    </div>
     <ul>
       <li>Affects the element itself, including its content</li>
-      <li>used for applying greyscale or constrast effects</li>
     </ul>
   </div>
 </section>
@@ -29,7 +32,6 @@
           .glass-box {
             width: 300px;
             background: rgba(255, 255, 255, 0.2); 
-            backdrop-filter: blur(10px);
           }
         </style>
         <div class="container">
@@ -75,12 +77,12 @@
         <style>
           /* blur, grayscale, brightness, contrast */
           .filter-box {
-            filter: blur(10px);
+            filter: blur(0px);
             /* background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover; */
           }
 
           .backdrop-filter-box {
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(0px);
           }
         </style>
       </code>
@@ -128,7 +130,7 @@
 </section>
 
 <section id="backdrop-filter-before">
-  <h3>Backdrop filter demo</h3>
+  <h3>Before backdrop-filter existed</h3>
   <div class="slide-container">
     <pre class="visible-code-block">
       <code class="code-block hljs" data-trim contenteditable="true">
@@ -142,6 +144,7 @@
             background: rgba(255, 255, 255, 0.2); 
           }
 
+          /*
           .glass-box::before {
             content: "";
             position: absolute;
@@ -154,6 +157,7 @@
             filter: blur(10px);
             z-index: 0;
           }
+            */
         </style>
         <div class="container">
           <div class="glass-box">Frosted Glass Effect</div>
