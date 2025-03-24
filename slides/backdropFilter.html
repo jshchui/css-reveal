@@ -1,0 +1,196 @@
+<section id="backdrop-filter">
+  <h3>backdrop-filter</h3>
+
+  <div class="baseline-container">
+    <baseline-status featureId="backdrop-filter"></baseline-status>
+  </div>
+
+  <ul>
+    <li>Modifies whatever's behind an element, not the element itself</li>
+    <li>Needs to be somewhat transparent or you don't see anything</li>
+    <li>No need to use old-school hacks to achieve blurring background</li>
+  </ul>
+
+  <div>
+    <h3>filter</h3>
+
+    <div class="baseline-container">
+      <baseline-status featureId="filter"></baseline-status>
+    </div>
+    <ul>
+      <li>Affects the element itself, including its content</li>
+    </ul>
+  </div>
+</section>
+
+<section id="backdrop-filter-demo">
+  <h3>Backdrop filter demo</h3>
+  <div class="slide-container">
+    <pre class="visible-code-block">
+      <code class="code-block hljs" data-trim contenteditable="true">
+        <style>
+          .glass-box {
+            width: 300px;
+            background: rgba(255, 255, 255, 0.2); 
+          }
+        </style>
+        <div class="container">
+          <div class="glass-box">Frosted Glass Effect</div>
+        </div>
+      </code>
+    </pre>
+
+    <script type="text/template" class="hidden-code-block">
+      <style>
+        .container {
+          margin: 0;
+          min-height: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+        }
+
+        .glass-box {
+          border-radius: 15px;
+          padding: 2rem;
+          color: white;
+          font-size: 20px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+      </style>
+    </script>
+
+    <div class="scene" data-edit></div>
+  </div>
+</section>
+
+<section id="backdrop-filter-filter-demo">
+  <h3>Backdrop-filter and Filter</h3>
+  <div class="slide-container">
+    <pre class="visible-code-block">
+      <code class="code-block hljs" data-trim contenteditable="true">
+        <style>
+          /* blur, grayscale, brightness, contrast */
+          .filter-box {
+            filter: blur(0px);
+            /* background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover; */
+          }
+
+          .backdrop-filter-box {
+            backdrop-filter: blur(0px);
+          }
+        </style>
+      </code>
+    </pre>
+
+    <script type="text/template" class="hidden-code-block">
+      <style>
+          .glass-box {
+            width: 300px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+          }
+        .container {
+          margin: 0;
+          display: flex;
+          gap: 20px;
+          justify-content: center;
+          align-items: center;
+          background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+          position: relative;
+        }
+
+        .box {
+          width: 300px;
+          height: 200px;
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 15px;
+          padding: 20px;
+          color: white;
+          font-size: 16px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+      </style>
+        <div class="container">
+          <div class="box filter-box" id="filterBox">filter</div>
+          <div class="box backdrop-filter-box" id="backdropBox">backdrop-filter</div>
+        </div>
+    </script>
+    <div class="scene" data-edit></div>
+  </div>
+</section>
+
+<section id="backdrop-filter-before">
+  <h3>Before backdrop-filter existed</h3>
+  <div class="slide-container">
+    <pre class="visible-code-block">
+      <code class="code-block hljs" data-trim contenteditable="true">
+        <style>
+          .container {
+            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+          }
+
+          .glass-box {
+            width: 300px;
+            background: rgba(255, 255, 255, 0.2); 
+          }
+
+          /*
+          .glass-box::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+            background: url(https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1600&q=80) no-repeat center center / cover;
+            background-size: cover;
+            filter: blur(10px);
+            z-index: 0;
+          }
+            */
+        </style>
+        <div class="container">
+          <div class="glass-box">Frosted Glass Effect</div>
+        </div>
+      </code>
+    </pre>
+
+    <script type="text/template" class="hidden-code-block">
+      <style>
+        .container {
+          margin: 0;
+          min-height: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .glass-box {
+          border-radius: 15px;
+          padding: 2rem;
+          color: white;
+          font-size: 20px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          position: relative;
+          overflow: hidden;
+        }
+      </style>
+    </script>
+
+    <div class="scene" data-edit></div>
+  </div>
+</section>

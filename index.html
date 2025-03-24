@@ -47,7 +47,7 @@
         }
       }
 
-      section > h3 {
+      section h3 {
         font-size: 2.5rem !important;
 
         &::before {
@@ -95,6 +95,10 @@
           margin: 0;
           /* color: black; */
         }
+
+        ul {
+          margin-bottom: 1.5rem;
+        }
       }
 
       baseline-status {
@@ -129,6 +133,10 @@
 
         .forty-sixty {
           width: 40%;
+        }
+
+        .thirty-seventy {
+          width: 30%;
         }
       }
 
@@ -168,7 +176,6 @@
         overflow: hidden;
         height: 100%;
         align-content: center;
-
       }
 
       .baseline-container {
@@ -191,17 +198,19 @@
         <section data-external="slides/presenters.html"></section>
         <section data-external="slides/accentColor.html"></section>
         <section data-external="slides/lightDark.html"></section>
-        <section data-external="slides/nesting.html"></section>
+        <section data-external="slides/backdropFilter.html"></section>
+        <section data-external="slides/textwrap.html"></section>
+        <section data-external="slides/subgrid.html"></section>
+        <section data-external="slides/containerQueries.html"></section>
         <section data-external="slides/has.html"></section>
         <section data-external="slides/popover.html"></section>
-        <section data-external="slides/inert.html"></section>
         <section data-external="slides/startingStyle.html"></section>
         <section data-external="slides/individualTransform.html"></section>
-        <section data-external="slides/subgrid.html"></section>
+        <section data-external="slides/inert.html"></section>
         <section data-external="slides/alignContent.html"></section>
-        <section data-external="slides/contentVisibility.html"></section>
-        <section data-external="slides/containerQueries.html"></section>
-        <section data-external="slides/userInteraction.html"></section>
+        <section data-external="slides/nesting.html"></section>
+        <!-- <section data-external="slides/contentVisibility.html"></section> -->
+        <!-- <section data-external="slides/userInteraction.html"></section> -->
       </div>
     </div>
 
@@ -271,9 +280,7 @@
 
           // If the line starts with an at‑rule, output it as-is and enter skipMode.
           // Add anything that you don't want to start with a scope here
-          if (
-            trimmed.startsWith("@")
-          ) {
+          if (trimmed.startsWith("@")) {
             output += line + "\n";
             skipMode = true;
             continue;
@@ -444,27 +451,27 @@
 
             // });
 
-            codeBlock.addEventListener('input', () => {
+            codeBlock.addEventListener("input", () => {
               // updateDataEdit();
 
-							const selection = window.getSelection();
-							const range = selection.getRangeAt(0);
-							const preHighlightCaretPosition = getCaretCharacterOffsetWithin(codeBlock);
+              const selection = window.getSelection();
+              const range = selection.getRangeAt(0);
+              const preHighlightCaretPosition =
+                getCaretCharacterOffsetWithin(codeBlock);
 
-							// Remove 'data-highlighted' and reapply highlighting
-							codeBlock.removeAttribute('data-highlighted');
-							codeBlock.className = 'code-block hljs';
-							highlight.highlightBlock(codeBlock);
+              // Remove 'data-highlighted' and reapply highlighting
+              codeBlock.removeAttribute("data-highlighted");
+              codeBlock.className = "code-block hljs";
+              highlight.highlightBlock(codeBlock);
 
-							// Restore caret position
-							setCaretAtCharacterOffset(codeBlock, preHighlightCaretPosition);
-
+              // Restore caret position
+              setCaretAtCharacterOffset(codeBlock, preHighlightCaretPosition);
 
               codeBlock.dataset.rawContent = codeBlock.innerText;
 
-							// Update the data-edit div
-							updateDataEdit();
-						});
+              // Update the data-edit div
+              updateDataEdit();
+            });
           }
         });
 
