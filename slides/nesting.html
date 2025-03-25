@@ -206,3 +206,34 @@
       <div class="scene" data-edit></div>
   </div>
 </section>
+<section id="nesting-4">
+  <h3>What about SASS?</h3>
+  <div class="slide-container">
+    <ul>
+    <li>Unable to create new selectors
+      <pre class="visible-code-block">
+        <code class="code-block hljs">
+.nav {
+  &--list {
+    color: black;
+  }
+}
+
+
+/* SASS equivalent */
+.nav--list {
+  color: black
+}
+
+
+/* Native CSS nesting equivalent */
+--list.nav {
+  color: black;
+}
+        </code>
+      </pre>
+    </li>
+    <li>Other features such as mixins and variables</li>
+    </ul>
+  </div>
+</section>
