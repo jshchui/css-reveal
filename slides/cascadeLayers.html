@@ -1,0 +1,139 @@
+<section id="casecade-layers-info">
+    <h3>@layer</h3>
+
+    <div class="baseline-container">
+        <baseline-status featureId="cascade-layers"></baseline-status>
+    </div>
+
+    <ul>
+        <li>
+            The <code>@layer</code> at-rule can be used to define the order of precedence regarding CSS specificity.
+        </li>
+        <li>
+            Previously, developers relied heavily on naming conventions like BEM and the <code>!important</code> property.
+        </li>
+        <li>
+            With cascade layers, the precedence of a layer always takes beats the specificity of a selector.
+        </li>
+    </ul>
+</section>
+<section id="cascade-layers-1">
+    <h3>@layer demo</h3></h3>
+    <div class="slide-container">
+        <pre class="visible-code-block">
+            <code class="code-block hljs" data-trim contenteditable="true">
+                <style>
+                    .card__link {
+                        color: rebeccapurple;
+                    }
+
+                    .card__link--secondary {
+                        color: burlywood;
+                    }
+
+                    .card__link--secondary--special {
+                        color: coral;
+                        font-weight: bold;
+                    }
+                </style>
+                <div class="card">
+                    <h2 class="card__title">Card</h2>
+                    <a href="#" class="card__link">This is a link.</a>
+                    <div class="card__description-box">
+                        <p class="card__description">Description</p>
+                        <a href="#" class="card__link card__link--secondary">This is another link.</a>
+                        <a href="#" class="card__link card__link--secondary card__link--secondary--special">This is a special link.</a>
+                    </div>
+                </div>
+            </code>
+        </pre>
+        <script type="text/template" class="hidden-code-block">
+            <style>
+                .card {
+                    padding: 1rem;
+                    border-radius: 1rem;
+                    border-style: solid;
+                    border-color: black;
+                    border-width: 4px;
+                    font-size: 24px;
+                }
+
+                .card__description-box {
+                    padding: 1rem;
+                    margin: 1rem;
+                    border-radius: 1rem;
+                    border-style: dashed;
+                    border-color: gray;
+                    border-width: 1px;
+                    display: flex;
+                    flex-direction: column;
+                }
+            </style>
+        </script>
+        <div class="scene" data-edit></div>
+    </div>
+</section>
+<section id="cascade-layers-2">
+    <h3>@layer demo complete</h3></h3>
+    <div class="slide-container">
+        <pre class="visible-code-block">
+            <code class="code-block hljs" data-trim contenteditable="true">
+                <style>
+                    @layer base, typography, utilities;
+
+                    @layer base {
+                        .link {
+                            color: rebeccapurple;
+                        }
+                    }
+
+                    @layer typography {
+                        .secondary-link {
+                            color: burlywood;
+                        }
+                    }
+
+                    @layer utilities {
+                        .special-link {
+                            color: coral;
+                            font-weight: bold;
+                        }
+                    }
+                </style>
+                <div class="card">
+                    <h2 class="title">Card</h2>
+                    <a href="#" class="link">This is a link.</a>
+                    <div class="description-box">
+                        <p class="description">Description</p>
+                        <a href="#" class="secondary-link">This is another link.</a>
+                        <a href="#" class="secondary-link special-link">This is a special link.</a>
+                    </div>
+                </div>
+            </code>
+        </pre>
+        <script type="text/template" class="hidden-code-block">
+            <style>
+                .card {
+                    padding: 1rem;
+                    border-radius: 1rem;
+                    border-style: solid;
+                    border-color: black;
+                    border-width: 4px;
+                    font-size: 24px;
+                }
+
+                .card__description-box {
+                    padding: 1rem;
+                    margin: 1rem;
+                    border-radius: 1rem;
+                    border-style: dashed;
+                    border-color: gray;
+                    border-width: 1px;
+                    display: flex;
+                    flex-direction: column;
+                }
+            </style>
+        </script>
+        <div class="scene" data-edit></div>
+    </div>
+</section>
