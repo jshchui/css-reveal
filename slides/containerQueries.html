@@ -15,13 +15,17 @@
       Great for building flexible, reusable components that adapt to where
       they’re used.
     </li>
+    <li>
+      Need to declare <code>container-type</code> and
+      <code>container-name</code> to be used.
+    </li>
   </ul>
 </section>
 <section id="container-queries-demo-1">
   <h3>Container Queries before</h3>
   <div class="slide-container">
     <pre class="visible-code-block forty-sixty">
-        <code class="code-block hljs" data-trim contenteditable="true">
+        <code class="code-block hljs" data-trim contenteditable="true" spellcheck="false">
           <style>
           .card-container {
             width: 100%;
@@ -177,7 +181,7 @@
   <h3>Container Queries after</h3>
   <div class="slide-container">
     <pre class="visible-code-block forty-sixty">
-      <code class="code-block hljs" data-trim contenteditable="true">
+      <code class="code-block hljs" data-trim contenteditable="true" spellcheck="false">
         <style>
         .card-container {
           container-type: inline-size;
@@ -203,7 +207,7 @@
           }
         }
 
-        @container card (max-width: 399px) and (min-width: 150px) {
+        @container card (min-width: 150px) and (max-width: 399px) {
           .card {
             flex-direction: column;
             height: unset;
