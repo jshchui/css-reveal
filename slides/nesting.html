@@ -209,10 +209,12 @@
 <section id="nesting-4">
   <h3>What about SASS?</h3>
   <div class="slide-container">
-    <ul>
-    <li>Unable to create new selectors
-      <pre class="visible-code-block">
-        <code class="code-block hljs">
+    <div class="split-list">
+    <div>
+      <ul>
+        <li>Unable to create new selectors
+          <pre class="visible-code-block">
+            <code class="code-block hljs" data-trim contenteditable="true">
 .nav {
   &--list {
     color: black;
@@ -230,10 +232,22 @@
 --list.nav {
   color: black;
 }
-        </code>
-      </pre>
-    </li>
+            </code>
+          </pre>
+        </li>
+      </ul>
+    </div>
+  <div>
+    <ul>
     <li>Other features such as mixins and variables</li>
-    </ul>
+  </ul>
   </div>
+  </div>
+  </div>
+  <style>
+    .split-list > div {
+      flex: 1;
+      min-width: 300px;
+    }
+  </style>
 </section>
