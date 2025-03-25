@@ -79,24 +79,24 @@
     <h3>Using inert in a drawer</h3>
     <div class="slide-container">
         <pre class="visible-code-block">
-            <code class="code-block hljs" data-trim contenteditable="true" spellcheck="false" data-trim contenteditable="true" data-line-numbers="10,16">
+            <code class="code-block hljs" data-trim contenteditable="true" spellcheck="false">
                 <script>
-                    const toggleBtn = document.querySelector('.drawer-toggle');
-                    const closeBtn = document.querySelector('.drawer-close');
-                    const drawer = document.querySelector('.drawer');
-                    const content = document.querySelector('.content');
-                    
-                    toggleBtn.addEventListener('click', () => {
-                        drawer.classList.add('open');
-                        drawer.classList.add("inactive");
-                        content.toggleAttribute("inert");
-                    });
-                    
-                    closeBtn.addEventListener('click', () => {
-                        drawer.classList.remove('open');
-                        drawer.classList.remove("inactive");
-                        content.toggleAttribute("inert");
-                    });
+                    (() => {
+                        const toggleBtn = document.querySelector('.drawer-toggle');
+                        const closeBtn = document.querySelector('.drawer-close');
+                        const drawer = document.querySelector('.drawer');
+                        const content = document.querySelector('.content');
+                        
+                        toggleBtn.addEventListener('click', () => {
+                            drawer.classList.add('open');
+                            drawer.classList.add("inactive");
+                        });
+                        
+                        closeBtn.addEventListener('click', () => {
+                            drawer.classList.remove('open');
+                            drawer.classList.remove("inactive");
+                        });
+                    })()
                 </script>
             </code>
         </pre>

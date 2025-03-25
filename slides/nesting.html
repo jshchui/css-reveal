@@ -7,14 +7,202 @@
 
     <ul>
         <li>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Previously, every CSS selector needed to be explicitly declared, separately from one another.
         </li>
         <li>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          This added a lot of reptition and unnecssary complexity to your stylesheets.
         </li>
         <li>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          As a workaround, developers turned to CSS extensions such as SASS/SCSS.
         </li>
-        <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+        <li>
+          With CSS nesting, developers can now nest one style rule inside another, readability, modularity, and maintainability of stylesheets.
+        </li>
     </ul>
+</section>
+<section id="nesting-1">
+  <h3>CSS nesting demo</h3>
+  <div class="slide-container">
+      <pre class="visible-code-block">
+          <code class="code-block hljs" data-trim contenteditable="true">
+              <style>
+                .card .card-header {
+                  padding: 16px;
+                  background-color: aliceblue;
+                  border-bottom: 1px solid white;
+                }
+
+                .card .card-body {
+                  padding: 16px;
+                }
+
+                .card .card-body .card-description {
+                  color: green;
+                  padding-bottom: 16px;
+                }
+
+                .card .card-body .btn {
+                  display: inline-block;
+                  padding: 8px 16px;
+                  background-color: navy;
+                  color: white;
+                  text-decoration: none;
+                  border-radius: 4px;
+                  transition: background-color 0.2s;
+                }
+
+                .card .card-body .btn:hover {
+                  background-color: blue;
+                }
+              </style>
+              <div class="card">
+                  <h2 class="card-header">Card</h2>
+                  <div class="card-body">
+                      <p class="card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                      <a href="#" class="btn">Learn More</a>
+                  </div>
+              </div>
+          </code>
+      </pre>
+      <script type="text/template" class="hidden-code-block">
+          <style>
+              .card {
+                  padding: 1rem;
+                  border-radius: 1rem;
+                  border-style: solid;
+                  border-color: black;
+                  border-width: 4px;
+                  font-size: 24px;
+              }
+          </style>
+      </script>
+      <div class="scene" data-edit></div>
+  </div>
+</section>
+<section id="nesting-2">
+  <h3>CSS nesting demo complete</h3>
+  <div class="slide-container">
+      <pre class="visible-code-block">
+          <code class="code-block hljs" data-trim contenteditable="true">
+              <style>
+                .card {
+                  & .card-header {
+                    padding: 16px;
+                    background-color: aliceblue;
+                    border-bottom: 1px solid white;
+                  }
+
+                  & .card-body {
+                    padding: 16px;
+
+                    & .card-description {
+                      color: green;
+                      padding-bottom: 16px;
+                    }
+
+                    & .btn {
+                      display: inline-block;
+                      padding: 8px 16px;
+                      background-color: navy;
+                      color: white;
+                      text-decoration: none;
+                      border-radius: 4px;
+                      transition: background-color 0.2s;
+
+                      &:hover {
+                        background-color: blue;
+                      }
+                    }
+                  }
+                }
+              </style>
+              <div class="card">
+                  <h2 class="card-header">Card</h2>
+                  <div class="card-body">
+                      <p class="card-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                      <a href="#" class="btn">Learn More</a>
+                  </div>
+              </div>
+          </code>
+      </pre>
+      <script type="text/template" class="hidden-code-block">
+          <style>
+              .card {
+                  padding: 1rem;
+                  border-radius: 1rem;
+                  border-style: solid;
+                  border-color: black;
+                  border-width: 4px;
+                  font-size: 24px;
+              }
+          </style>
+      </script>
+      <div class="scene" data-edit></div>
+  </div>
+</section>
+<section id="nesting-3">
+  <h3>Using the &</h3>
+  <div class="slide-container">
+      <pre class="visible-code-block">
+          <code class="code-block hljs" data-trim contenteditable="true">
+              <style>
+                .container {
+                  .right {
+                    .circle {
+                      background-color: brown;
+                    }
+                  }
+                }
+                
+              </style>
+              <div class="container">
+                  <div class="top left square shape"></div>
+                  <div class="top right circle shape"></div>
+                  <div class="bottom left circle shape"></div>
+                  <div class="bottom right square shape"></div>
+              </div>
+          </code>
+      </pre>
+      <script type="text/template" class="hidden-code-block">
+          <style>
+              .container {
+                position: relative;
+                width: 400px;
+                height: 400px;
+              }
+
+              .left {
+                left: 20px;
+              }
+
+              .right {
+                right: 20px;
+              }
+
+              .top {
+                top: 20px;
+              }
+
+              .bottom {
+                bottom: 20px;
+              }
+
+              .shape {
+                position: absolute;
+                height: 120px;
+                width: 120px;
+                background-color: blue;
+              }
+
+              .circle {
+                border-radius: 50%;
+              }
+              
+              .square {
+                border-radius: unset;
+              }
+          </style>
+      </script>
+      <div class="scene" data-edit></div>
+  </div>
 </section>
