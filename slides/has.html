@@ -9,14 +9,7 @@
     <li>
       Allows styling based on its related elements - Parent, Children, Siblings
     </li>
-    <li>
-      Simplifies styling decisions by “looking ahead” or “back” in the DOM,
-      which was not possible with traditional CSS selectors.
-    </li>
-    <li>
-      Useful in form validations, toggling content visibility, and designing
-      complex interactive components solely with CSS.
-    </li>
+    <li>Styling based on what's inside or around it</li>
   </ul>
 </section>
 
@@ -24,7 +17,7 @@
   <h3>:has demo 1</h3>
   <div class="slide-container">
     <pre class="visible-code-block">
-      <code class="code-block hljs" data-trim contenteditable="true">
+      <code class="code-block hljs" data-trim contenteditable="true" spellcheck="false">
         <style>
           form {
             width: 320px;
@@ -32,8 +25,8 @@
             border: 3px solid grey;
             border-radius: 8px;
 
-            /* if form has no more placeholders and has one input invalid */
-            /* if form has no more place older and has no more input invalid */
+            /* show RED if form has no more placeholders and has one input invalid */
+            /* show GREEN if form has no more placeholders and has no more input invalid */
           }
         </style>
 
@@ -118,7 +111,7 @@
   <h3>:has demo 1 complete</h3>
   <div class="slide-container">
     <pre class="visible-code-block">
-      <code class="code-block hljs" data-trim contenteditable="true">
+      <code class="code-block hljs" data-trim contenteditable="true" spellcheck="false">
         <style>
           form {
             width: 320px;
@@ -216,7 +209,7 @@
   <h3>:has - target previous sibling (javascript)</h3>
   <div class="slide-container">
     <pre class="visible-code-block">
-      <code class="code-block hljs" data-trim contenteditable="true">
+      <code class="code-block hljs" data-trim contenteditable="true" spellcheck="false">
         <style>
           .button-list {
             button:hover {
@@ -306,7 +299,7 @@
   <h3>:has - target previous sibling</h3>
   <div class="slide-container">
     <pre class="visible-code-block">
-      <code class="code-block hljs" data-trim contenteditable="true">
+      <code class="code-block hljs" data-trim contenteditable="true" spellcheck="false">
         <style>
           .button-list {
             button:hover {
@@ -375,7 +368,7 @@
   <h3>:has</h3>
   <div class="slide-container">
     <pre class="visible-code-block">
-      <code class="code-block hljs" data-trim contenteditable="true">
+      <code class="code-block hljs" data-trim contenteditable="true" spellcheck="false">
         <style>
           .button-list:has(button:hover) {
             button:not(:hover) {
@@ -442,7 +435,7 @@
   <h3>without :has using javascript</h3>
   <div class="slide-container">
     <pre class="visible-code-block">
-      <code class="code-block hljs" data-trim contenteditable="true">
+      <code class="code-block hljs" data-trim contenteditable="true" spellcheck="false">
         <style>
           .button-list:has(button:hover) {
             button:not(:hover) {

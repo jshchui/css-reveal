@@ -90,7 +90,8 @@
   // };
   var n = function(e) {
     e.setAttribute("contentEditable", "true");
-    
+    e.setAttribute("spellcheck", "false");
+
     // Find the associated data-edit container
     var n = e.closest("section").querySelector("[data-edit]");
     

@@ -25,7 +25,7 @@
   <!-- <div class="slide-container" id="slide-container-1"> -->
   <div class="slide-container">
     <pre class="visible-code-block">
-        <code class="code-block hljs" data-trim contenteditable="true">
+        <code class="code-block hljs" data-trim contenteditable="true" spellcheck="false">
           <style>
             :root {
               --bg-color: white;
@@ -76,7 +76,7 @@
 
   <div class="slide-container">
     <pre class="visible-code-block">
-        <code class="code-block hljs" data-trim contenteditable="true">
+        <code class="code-block hljs" data-trim contenteditable="true" spellcheck="false">
           <style>
             :root {
               color-scheme: light dark;
@@ -122,26 +122,21 @@
 
   <div class="slide-container">
     <pre class="visible-code-block">
-        <code class="code-block hljs" data-trim contenteditable="true">
+        <code class="code-block hljs" data-trim contenteditable="true" spellcheck="false">
           <style>
             :root {
-              &:has(input[name="mode"][value="l"]:checked) {
-                color-scheme: light;
-              }
-              &:has(input[name="mode"][value="d"]:checked) {
-                color-scheme: dark;
-              }
-
+              color-scheme: light dark;
               --bg-color: light-dark(white, black);
-              --text-color: light-dark(black, white);
+              --text-color: light-dark(white, black);
               --circle-color: light-dark(black, white);
             }
 
             .magenta-blast {
               --bg-color: light-dark(rebeccapurple, darkorchid);
-              --text-color: light-dark(lavender, thistle);
+              --text-color: light-dark(lavender, white);
               --circle-color: light-dark(mediumorchid, slateblue);
             }
+
             .container {
               color: var(--text-color);
               background-color: var(--bg-color);
@@ -169,7 +164,7 @@
           background: var(--circle-color);
           border: none;
           border-radius: 8px;
-          color: var(--bg-color);
+          color: var(--text-color);
           font-size: 16px;
           padding: 0.75em 1.5em;
           letter-spacing: 0.05em;
@@ -178,10 +173,6 @@
       </style>
       <div class="container" id="container2">
         <div class="circle"></div>
-        <div class="row gap">
-          <label><input name="mode" type="radio" value="l" checked>Light</label>
-          <label><input name="mode" type="radio" value="d">Dark</label>
-        </div>
         <button class="theme-button" onclick="toggleThemeLD2('magenta-blast')">Toggle Theme</button>
       </div>
     </script>
@@ -199,7 +190,7 @@
   <h3>Light Dark with Accent Color</h3>
   <div class="slide-container">
     <pre class="visible-code-block">
-      <code class="code-block hljs" data-trim contenteditable="true">
+      <code class="code-block hljs" data-trim contenteditable="true" spellcheck="false">
         <style>
           :root {
             color-scheme: light dark;
