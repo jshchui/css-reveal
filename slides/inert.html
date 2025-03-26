@@ -80,6 +80,19 @@
     <div class="slide-container">
         <pre class="visible-code-block">
             <code class="code-block hljs" data-trim contenteditable="true" spellcheck="false">
+                <div class="container">                    
+                    <div class="content">
+                        <button class="drawer-toggle">Open Drawer</button>
+                    </div>
+                    <div class="drawer">
+                        <button class="drawer-close">×</button>
+                        <ul>
+                            <li><a href="/">Menu item 1</a></li>
+                            <li><a href="/">Menu item 2</a></li>
+                            <li><a href="/">Menu item 3</a></li>
+                        </ul>
+                    </div>
+                </div>
                 <script>
                     (() => {
                         const toggleBtn = document.querySelector('.drawer-toggle');
@@ -101,19 +114,6 @@
             </code>
         </pre>
         <script type="text/template" class="hidden-code-block">
-            <div class="container">                    
-                <div class="content">
-                    <button class="drawer-toggle">Open Drawer</button>
-                </div>
-                <div class="drawer">
-                    <button class="drawer-close">×</button>
-                    <ul>
-                        <li><a href="/">Menu item 1</a></li>
-                        <li><a href="/">Menu item 2</a></li>
-                        <li><a href="/">Menu item 3</a></li>
-                    </ul>
-                </div>
-            </div>
         <style>
             .p {
                 font-size: 2px;
