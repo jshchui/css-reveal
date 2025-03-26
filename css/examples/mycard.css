@@ -1,0 +1,25 @@
+.mycard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: paleturquoise;
+    background-clip: border-box;
+}
+
+.myimg {
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+
+.mycard-title {
+    color: yellow;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.mycard-text {
+    margin-bottom: 0;
+}
