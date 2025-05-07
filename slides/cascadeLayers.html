@@ -43,9 +43,48 @@
         <pre class="visible-code-block">
             <code class="code-block hljs" data-trim contenteditable="true">
                 <style>
-                    @import url("/css/examples/mycard.css");
+                @import url("/css/examples/mycard.css");
                 </style>
-                <div class="mycard" style="width:20rem">
+                <div class="mycard">
+                    <img class="mycard-img-top" src="https://images.unsplash.com/photo-1742654230443-7c19cb55cd46" alt="Card image cap">
+                    <div class="mycard-body">
+                        <div class="mycard-title">Card title</div>
+                        <p class="mycard-text">Card text.</p>
+                    </div>
+                </div>
+            </code>
+        </pre>
+        <script type="text/template" class="hidden-code-block">
+        </script>
+        <div class="scene" data-edit></div>
+    </div>
+</section>
+<section id="cascade-layers-3">
+    <h3>@layer demo 2 complete</h3></h3>
+    <div class="slide-container">
+        <pre class="visible-code-block">
+            <code class="code-block hljs" data-trim contenteditable="true">
+                <style>
+                @import url("/css/examples/mycard.css");
+
+                .mycard {
+                  background-color: white;
+                }
+
+                .mycard-body {
+                  padding: 1rem;
+                }
+
+                .mycard-title {
+                  color: black;
+                  font-weight: bold;
+                }
+
+                .mycard-text {
+                  font-size: 24px;
+                }
+                </style>
+                <div class="mycard">
                     <img class="mycard-img-top" src="https://images.unsplash.com/photo-1742654230443-7c19cb55cd46" alt="Card image cap">
                     <div class="mycard-body">
                         <div class="mycard-title">Card title</div>
